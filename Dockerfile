@@ -3,7 +3,7 @@ FROM nginx:alpine
 LABEL maintainer="nicolas.pulido@crazycake.cl"
 
 # packages
-RUN apk update && apk add -U --no-cache --repository=http://dl-4.alpinelinux.org/alpine/edge/testing \
+RUN apk update && apk add -U --no-cache \
 	bash \
 	supervisor \
 	nano \
