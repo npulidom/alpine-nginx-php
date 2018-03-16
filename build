@@ -1,10 +1,13 @@
 #!/bin/sh
 
+TAG="edge"
+TIMEZONE="America/Santiago"
+
 # build
-docker build -t npulidom/alpine-nginx-php .
+docker build --build-arg timezone=$TIMEZONE -t npulidom/alpine-nginx-php:$TAG .
 echo "\n-> Build success\n"
 
 # image push
 if [ "$#" -ne 0 ] && [ "$1" = "push" ]; then
-	docker push npulidom/alpine-nginx-php
+	docker push npulidom/alpine-nginx-php:$TAG
 fi

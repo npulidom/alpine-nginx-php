@@ -2,31 +2,38 @@
 FROM nginx:alpine
 LABEL maintainer="nicolas.pulido@crazycake.cl"
 
+# build arguments
+ARG timezone="America/Santiago"
+
+# codecasts/php-alpine repository
+ADD https://php.codecasts.rocks/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
+# add
+RUN echo "@php https://php.codecasts.rocks/v3.7/php-7.2" >> /etc/apk/repositories
+
 # packages
-RUN apk update && apk add -U --no-cache \
+RUN apk add --update --no-cache \
 	bash \
 	supervisor \
 	nano \
-	curl \
 	gettext \
 	tzdata \
-	php7 \
-	php7-curl \
-	php7-dom \
-	php7-fpm \
-	php7-gettext \
-	php7-json \
-	php7-mbstring \
-	php7-mcrypt \
-	php7-mysqlnd \
-	php7-pdo \
-	php7-pdo_mysql \
-	php7-phar \
-	php7-opcache \
-	php7-openssl \
-	php7-session \
-	php7-xml \
-	php7-zlib \
+	curl \
+	php7@php \
+	php7-curl@php \
+	php7-dom@php \
+	php7-fpm@php \
+	php7-gettext@php \
+	php7-json@php \
+	php7-mbstring@php \
+	php7-mysqlnd@php \
+	php7-openssl@php \
+	php7-pdo@php \
+	php7-pdo_mysql@php \
+	php7-phar@php \
+	php7-opcache@php \
+	php7-session@php \
+	php7-xml@php \
+	php7-zlib@php \
 	&& rm -rf /var/cache/apk/*
 
 # directory links
@@ -36,7 +43,9 @@ RUN ln -s /etc/php7 /etc/php && \
 	ln -s /usr/lib/php7 /usr/lib/php
 
 # timezone
-ENV TZ=America/Santiago
+ENV TZ=$timezone \
+	COMPOSER_ALLOW_SUPERUSER=1
+
 RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && \
 	echo $TZ > /etc/timezone && date
 
