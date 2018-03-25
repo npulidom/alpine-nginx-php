@@ -1,6 +1,6 @@
 #!/bin/sh
 
-TAG="edge"
+TAG="latest"
 TIMEZONE="America/Santiago"
 
 # build
