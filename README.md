@@ -23,7 +23,7 @@ Nginx runs as `www-data` user.
 # latest tag
 FROM npulidom/alpine-nginx-php
 
-# working dir
+# working directory
 WORKDIR /var/www
 
 # extra ops ...
