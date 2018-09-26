@@ -39,6 +39,7 @@ CMD ["--nginx-env"]
 - nano
 - curl
 - gettext
+- composer
 - php7
 - php7-curl
 - php7-dom
@@ -47,6 +48,7 @@ CMD ["--nginx-env"]
 - php7-json
 - php7-mbstring
 - php7-mysqlnd
+- php7-mongodb
 - php7-pdo
 - php7-pdo_mysql
 - php7-phar
@@ -55,4 +57,3 @@ CMD ["--nginx-env"]
 - php7-session
 - php7-xml
 - php7-zlib
-- composer
