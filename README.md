@@ -20,8 +20,8 @@ Nginx runs as `www-data` user.
 ### Dockerfile building
 
 ```docker
-# latest tag for stable
-FROM npulidom/alpine-nginx-php:edge
+# latest tag
+FROM npulidom/alpine-nginx-php
 
 # working dir
 WORKDIR /var/www
