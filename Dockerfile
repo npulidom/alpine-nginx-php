@@ -8,7 +8,7 @@ ARG timezone="America/Santiago"
 # codecasts/php-alpine repository
 ADD https://php.codecasts.rocks/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
 # add repository
-RUN echo "@php https://php.codecasts.rocks/v3.7/php-7.2" >> /etc/apk/repositories
+RUN echo "@php https://php.codecasts.rocks/v3.8/php-7.2" >> /etc/apk/repositories
 
 # packages
 RUN apk add --update --no-cache \
