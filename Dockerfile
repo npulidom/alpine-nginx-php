@@ -26,6 +26,7 @@ RUN apk add --update --no-cache \
 	php7-json@php \
 	php7-mbstring@php \
 	php7-mysqlnd@php \
+	php7-mongodb@php \
 	php7-openssl@php \
 	php7-pdo@php \
 	php7-pdo_mysql@php \

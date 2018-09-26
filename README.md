@@ -2,7 +2,7 @@ alpine-nginx-php
 ================
 
 Nginx running in Alpine with PHP 7.2.x (fpm), developed for PHP apps.  
-Uncompressed size: 114 Mb.
+Uncompressed size: 110 Mb.
 
 ## Usage
 
