@@ -1,6 +1,6 @@
 # OS alpine 3.8
 FROM nginx:alpine
-LABEL maintainer="nicolas.pulido@crazycake.cl"
+LABEL maintainer="nicolas.pulido@crazycake.tech"
 
 # build arguments
 ARG timezone="America/Santiago"
