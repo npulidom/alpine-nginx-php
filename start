@@ -9,11 +9,11 @@ if [ "$1" = "--nginx-env" ]; then
 	envvars=$(printenv | grep '[A-Z][_]') && for ev in $envvars;
 	do
 
-		ev_values=(${ev//=/ })
+		ev_values=(${ev/=/ })
 
-		echo -e "adding env var ${ev_values[0]} => ${ev_values[1]}";
+		echo -e "adding env var ${ev_values[0]} => ${ev_values[@]:1}";
 
-		sed -i "/# APP/a fastcgi_param ${ev_values[0]} '${ev_values[1]}';" /etc/nginx/sites-enabled/default
+		sed -i "/# APP/a fastcgi_param ${ev_values[0]} '${ev_values[@]:1}';" /etc/nginx/sites-enabled/default
 
 	done
 fi
