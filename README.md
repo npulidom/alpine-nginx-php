@@ -1,18 +1,18 @@
 alpine-nginx-php
 ================
 
-Nginx running in Alpine with PHP 7.2.x (fpm), developed for PHP apps.  
+Nginx running in Alpine with PHP 7.2.x (fpm), developed for PHP apps.
 Uncompressed size: 110 MB.
 
 ## Usage
 
-Run Container [local exposed port **8080**]  
+Run Container [local exposed port **8080**]
 `docker run -p 8080:80 -d npulidom/alpine-nginx-php`
 
-Entry point options  
+Entry point options
 `--nginx-env` : export env vars to nginx, var must have at least one underscore, ie: *APP_ENV*, *APP_TZ*.
 
-Build Arguments (see build file)  
+Build Arguments (see build file)
 `timezone="America/Santiago"`
 
 Nginx runs as `www-data` user.
