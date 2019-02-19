@@ -1,5 +1,5 @@
 # OS alpine 3.8
-FROM nginx:alpine
+FROM nginx:1.15.7-alpine
 LABEL maintainer="nicolas.pulido@crazycake.tech"
 
 # build arguments
