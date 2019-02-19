@@ -1,4 +1,4 @@
-# OS alpine 3.8
+# OS alpine 3.9
 FROM nginx:alpine
 LABEL maintainer="nicolas.pulido@crazycake.tech"
 
@@ -8,7 +8,7 @@ ARG timezone="America/Santiago"
 # codecasts/php-alpine repository
 ADD https://php.codecasts.rocks/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
 # add repository
-RUN echo "@php https://php.codecasts.rocks/v3.8/php-7.2" >> /etc/apk/repositories
+RUN echo "@php https://php.codecasts.rocks/v3.9/php-7.3" >> /etc/apk/repositories
 
 # packages
 RUN apk update && apk add --no-cache \
