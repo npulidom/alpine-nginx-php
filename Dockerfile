@@ -14,7 +14,6 @@ RUN echo "@php https://php.codecasts.rocks/v3.8/php-7.2" >> /etc/apk/repositorie
 RUN apk update && apk add --no-cache \
 	bash \
 	supervisor \
-	nano \
 	gettext \
 	tzdata \
 	curl \
@@ -27,6 +26,7 @@ RUN apk update && apk add --no-cache \
 	php7-mbstring@php \
 	php7-mongodb@php \
 	php7-openssl@php \
+	php7-pdo@php \
 	php7-phar@php \
 	php7-opcache@php \
 	php7-session@php \
