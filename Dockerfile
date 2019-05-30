@@ -6,9 +6,10 @@ LABEL maintainer="nicolas.pulido@crazycake.tech"
 ARG timezone="America/Santiago"
 
 # codecasts/php-alpine repository
-ADD https://php.codecasts.rocks/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
+ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
+
 # add repository
-RUN echo "@php https://php.codecasts.rocks/v3.8/php-7.2" >> /etc/apk/repositories
+RUN echo "https://dl.bintray.com/php-alpine/v3.8/php-7.2" >> /etc/apk/repositories
 
 # packages
 RUN apk update && apk add --no-cache \
