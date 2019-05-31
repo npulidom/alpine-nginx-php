@@ -1,5 +1,5 @@
-# OS alpine 3.8
-FROM nginx:1.15.7-alpine
+# OS alpine 3.9
+FROM nginx:alpine
 LABEL maintainer="nicolas.pulido@crazycake.tech"
 
 # build arguments
@@ -9,7 +9,7 @@ ARG timezone="America/Santiago"
 ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
 
 # add repository
-RUN echo "https://dl.bintray.com/php-alpine/v3.8/php-7.2" >> /etc/apk/repositories
+RUN echo "https://dl.bintray.com/php-alpine/v3.9/php-7.3" >> /etc/apk/repositories
 
 # packages
 RUN apk update && apk add --no-cache \
@@ -18,21 +18,21 @@ RUN apk update && apk add --no-cache \
 	gettext \
 	tzdata \
 	curl \
-	php7@php \
-	php7-curl@php \
-	php7-dom@php \
-	php7-fpm@php \
-	php7-gettext@php \
-	php7-json@php \
-	php7-mbstring@php \
-	php7-mongodb@php \
-	php7-openssl@php \
-	php7-pdo@php \
-	php7-phar@php \
-	php7-opcache@php \
-	php7-session@php \
-	php7-xml@php \
-	php7-zlib@php \
+	php \
+	php-curl \
+	php-dom \
+	php-fpm \
+	php-gettext \
+	php-json \
+	php-mbstring \
+	php-mongodb \
+	php-openssl \
+	php-pdo \
+	php-phar \
+	php-opcache \
+	php-session \
+	php-xml \
+	php-zlib \
 	&& rm -rf /var/cache/apk/*
 
 # directory links
