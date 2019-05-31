@@ -1,6 +1,6 @@
 #!/bin/sh
 
-TAG="latest"
+TAG="${1:-latest}"
 TIMEZONE="America/Santiago"
 
 # build
