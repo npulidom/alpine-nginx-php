@@ -15,8 +15,8 @@ RUN echo "https://dl.bintray.com/php-alpine/v3.9/php-7.3" >> /etc/apk/repositori
 RUN apk update && apk add --no-cache \
 	bash \
 	supervisor \
-	gettext \
 	tzdata \
+	gettext \
 	curl \
 	php \
 	php-curl \
@@ -45,8 +45,7 @@ RUN ln -s /etc/php7 /etc/php && \
 ENV TZ=$timezone \
 	COMPOSER_ALLOW_SUPERUSER=1
 
-RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && \
-	echo $TZ > /etc/timezone && date
+RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && date
 
 # php composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
