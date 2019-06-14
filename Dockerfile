@@ -50,11 +50,13 @@ RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && dat
 # php composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
-# set www-data group, prepare folders
+# set www-data group (82 is the standard uid/gid for www-data in Alpine)
 RUN set -x && \
 	addgroup -g 82 -S www-data && \
-	adduser -u 82 -D -S -G www-data www-data && \
-	rm /etc/nginx/conf.d/default.conf && \
+	adduser -u 82 -D -S -G www-data www-data
+
+# prepare folders
+RUN rm /etc/nginx/conf.d/default.conf && \
 	mkdir -p /var/www/public /var/log/supervisord
 
 # copy files
