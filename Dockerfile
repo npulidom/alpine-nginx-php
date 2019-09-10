@@ -1,6 +1,9 @@
 # OS alpine 3.9
-FROM nginx:alpine
+FROM nginx:1.15-alpine
 LABEL maintainer="nicolas.pulido@crazycake.tech"
+
+# alpine & nginx version
+RUN cat /etc/os-release | grep PRETTY_NAME && nginx -v
 
 # build arguments
 ARG timezone="America/Santiago"
