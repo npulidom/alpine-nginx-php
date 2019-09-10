@@ -17,7 +17,9 @@ RUN apk update && apk add --no-cache \
 	supervisor \
 	tzdata \
 	gettext \
+	zlib-dev \
 	curl \
+	# php
 	php \
 	php-curl \
 	php-dom \
