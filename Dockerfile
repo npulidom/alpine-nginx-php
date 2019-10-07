@@ -69,6 +69,7 @@ COPY supervisord.conf /etc/supervisord.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY nginx-sites.conf /etc/nginx/sites-enabled/default
 COPY php-fpm.conf /etc/php7/php-fpm.d/www.conf
+COPY index.php /var/www/public
 COPY start /root/start
 
 # expose
