@@ -3,33 +3,33 @@ kind: Service
 metadata:
   name: seeds
   labels:
-    app: sd-local
+    app: sd-php
 spec:
   type: NodePort
   ports:
   - port: 80
   selector:
-    app: sd-local
+    app: sd-php
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: local
+  name: sd-php
   labels:
-    app: sd-local
+    app: sd-php
     env: local
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sd-local
+      app: sd-php
   template:
     metadata:
       labels:
-        app: sd-local
+        app: sd-php
     spec:
       containers:
-      - name: sd-ether
+      - name: sd-php
         image: npulidom/alpine-nginx-php
         ports:
         - containerPort: 80
