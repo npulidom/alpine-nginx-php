@@ -3,7 +3,7 @@
 TAG="${1:-latest}"
 TIMEZONE="America/Santiago"
 
-# build
+# build [--no-cache]
 docker build --build-arg timezone=$TIMEZONE -t npulidom/alpine-nginx-php:$TAG .
 echo "\n-> Build success\n"
 
