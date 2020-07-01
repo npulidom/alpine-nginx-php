@@ -1,5 +1,5 @@
-# OS alpine 3.9
-FROM nginx:1.15-alpine
+# OS alpine 3.11
+FROM nginx:1.19-alpine
 LABEL maintainer="nicolas.pulido@crazycake.tech"
 
 # alpine & nginx version
@@ -12,7 +12,7 @@ ARG timezone="America/Santiago"
 ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
 
 # add repository
-RUN echo "https://dl.bintray.com/php-alpine/v3.9/php-7.3" >> /etc/apk/repositories
+RUN echo "https://dl.bintray.com/php-alpine/v3.11/php-7.3" >> /etc/apk/repositories
 
 # packages
 RUN apk update && apk add --no-cache \
@@ -35,15 +35,16 @@ RUN apk update && apk add --no-cache \
 	php-phar \
 	php-opcache \
 	php-session \
+	php-tokenizer \
 	php-xml \
 	php-zlib \
 	&& rm -rf /var/cache/apk/*
 
 # directory links
-RUN ln -s /etc/php7 /etc/php && \
-	ln -s /usr/bin/php7 /usr/bin/php && \
-	ln -s /usr/sbin/php-fpm7 /usr/bin/php-fpm && \
-	ln -s /usr/lib/php7 /usr/lib/php
+RUN ln -sf /etc/php7 /etc/php && \
+	ln -sf /usr/bin/php7 /usr/bin/php && \
+	ln -sf /usr/sbin/php-fpm7 /usr/bin/php-fpm && \
+	ln -sf /usr/lib/php7 /usr/lib/php
 
 # timezone
 ENV TZ=$timezone \
@@ -55,9 +56,9 @@ RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && dat
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
 # set www-data group (82 is the standard uid/gid for www-data in Alpine)
-RUN set -x ; \
-	addgroup -g 82 -S www-data ; \
-	adduser -u 82 -D -S -G www-data www-data && exit 0 ; exit 1
+RUN set -x; \
+	addgroup -g 82 -S www-data; \
+	adduser -u 82 -D -S -G www-data www-data && exit 0; exit 1
 
 # prepare folders
 RUN rm /etc/nginx/conf.d/default.conf && \
