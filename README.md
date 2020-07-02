@@ -43,6 +43,7 @@ CMD ["--nginx-env"]
 - php
 - php-curl
 - php-dom
+- php-fileinfo
 - php-fpm
 - php-gettext
 - php-json
