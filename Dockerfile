@@ -25,6 +25,7 @@ RUN apk update && apk add --no-cache \
 	php \
 	php-curl \
 	php-dom \
+	php-fileinfo \
 	php-fpm \
 	php-gettext \
 	php-json \
