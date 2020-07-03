@@ -36,6 +36,7 @@ RUN apk update && apk add --no-cache \
 	php-phar \
 	php-opcache \
 	php-session \
+	php-simplexml \
 	php-tokenizer \
 	php-xml \
 	php-zlib \

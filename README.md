@@ -54,6 +54,7 @@ CMD ["--nginx-env"]
 - php-opcache
 - php-openssl
 - php-session
+- php-simplexml
 - php-tokenizer
 - php-xml
 - php-zlib
