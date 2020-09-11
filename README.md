@@ -6,16 +6,24 @@ Uncompressed size: ~104 MB.
 
 ## Usage
 
-Run Container [local exposed port **8080**]
-`docker run -p 8080:80 -d npulidom/alpine-nginx-php`
+Run Container [local exposed port **8080**].
+
+
+```sh
+# nginx runs as www-data user
+
+docker run -p 8080:80 -d npulidom/alpine-nginx-php
+```
 
 Entry point options
-`--nginx-env` : export env vars to nginx, var must have at least one underscore, ie: *APP_ENV*, *APP_TZ*.
+```yaml
+--nginx-env : export env vars to nginx, var must have at least one underscore, ie: *APP_ENV*, *APP_TZ*.
+```
 
 Build Arguments (see build file)
-`timezone="America/Santiago"`
-
-Nginx runs as `www-data` user.
+```yaml
+timezone="America/Santiago"
+```
 
 ### Dockerfile building
 
