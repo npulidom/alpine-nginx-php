@@ -8,7 +8,6 @@ Uncompressed size: ~104 MB.
 
 Run Container [local exposed port **8080**].
 
-
 ```sh
 # nginx runs as www-data user
 
@@ -25,16 +24,23 @@ Build Arguments (see build file)
 timezone="America/Santiago"
 ```
 
-### Dockerfile building
+### Build Image
 
 ```docker
-# latest tag
-FROM npulidom/alpine-nginx-php
+FROM your/image
+
+# install any other package...
+# apk add --no-cache php7-mysqli && rm -rf /var/cache/apk/*
 
 # working directory
 WORKDIR /var/www
 
-# extra ops ...
+# composer install dependencies
+COPY composer.json .
+RUN composer install --no-dev && composer dump-autoload --optimize --no-dev
+
+# project code
+COPY . .
 
 # start supervisor
 CMD ["--nginx-env"]
@@ -44,7 +50,6 @@ CMD ["--nginx-env"]
 
 - bash
 - supervisord
-- nano
 - curl
 - gettext
 - composer
