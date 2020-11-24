@@ -1,6 +1,5 @@
 # OS alpine 3.11
 FROM nginx:1.19-alpine
-LABEL maintainer="nicolas.pulido@crazycake.tech"
 
 # alpine & nginx version
 RUN cat /etc/os-release | grep PRETTY_NAME && nginx -v

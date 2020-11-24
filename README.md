@@ -11,7 +11,7 @@ Run Container [local exposed port **8080**].
 ```sh
 # nginx runs as www-data user
 
-docker run -p 8080:80 -d npulidom/alpine-nginx-php
+docker run -p 8080:80 -d your/image
 ```
 
 Entry point options
