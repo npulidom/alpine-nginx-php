@@ -24,7 +24,7 @@ Build Arguments (see build file)
 timezone="America/Santiago"
 ```
 
-### Build Image
+### Build
 
 ```docker
 FROM your/image
@@ -61,9 +61,9 @@ CMD ["--nginx-env"]
 - php-gettext
 - php-json
 - php-mbstring
-- php-mongodb
 - php-pdo
 - php-phar
+- php-psr
 - php-opcache
 - php-openssl
 - php-session

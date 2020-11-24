@@ -1,17 +1,11 @@
-# OS alpine 3.11
-FROM nginx:1.19-alpine
+# OS alpine 3.12
+FROM nginx:1.19.4-alpine
 
 # alpine & nginx version
 RUN cat /etc/os-release | grep PRETTY_NAME && nginx -v
 
 # build arguments
 ARG timezone="America/Santiago"
-
-# codecasts/php-alpine repository
-ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
-
-# add repository
-RUN echo "https://dl.bintray.com/php-alpine/v3.11/php-7.3" >> /etc/apk/repositories
 
 # packages
 RUN apk update && apk add --no-cache \
@@ -21,24 +15,25 @@ RUN apk update && apk add --no-cache \
 	gettext \
 	curl \
 	# php
-	php \
-	php-curl \
-	php-dom \
-	php-fileinfo \
-	php-fpm \
-	php-gettext \
-	php-json \
-	php-mbstring \
-	php-mongodb \
-	php-openssl \
-	php-pdo \
-	php-phar \
-	php-opcache \
-	php-session \
-	php-simplexml \
-	php-tokenizer \
-	php-xml \
-	php-zlib \
+	php7 \
+	php7-curl \
+	php7-dom \
+	php7-fileinfo \
+	php7-fpm \
+	php7-gd \
+	php7-gettext \
+	php7-json \
+	php7-mbstring \
+	php7-openssl \
+	php7-pdo \
+	php7-phar \
+	php7-psr \
+	php7-opcache \
+	php7-session \
+	php7-simplexml \
+	php7-tokenizer \
+	php7-xml \
+	php7-zlib \
 	&& rm -rf /var/cache/apk/*
 
 # directory links
