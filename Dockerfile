@@ -61,7 +61,7 @@ RUN rm /etc/nginx/conf.d/default.conf && \
 	mkdir -p /var/www/public /var/log/supervisord
 
 # copy files
-COPY .bashrc /root/.bashrc
+COPY bashrc /root/.bashrc
 COPY supervisord.conf /etc/supervisord.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY nginx-sites.conf /etc/nginx/sites-enabled/default
