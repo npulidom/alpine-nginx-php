@@ -1,5 +1,5 @@
-# OS alpine 3.12
-FROM nginx:1.19.4-alpine
+# OS alpine 3.13
+FROM nginx:1.19.8-alpine
 
 # alpine & nginx version
 RUN cat /etc/os-release | grep PRETTY_NAME && nginx -v
