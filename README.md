@@ -16,7 +16,7 @@ docker run -p 8080:80 -d your/image
 
 Entry point options
 ```yaml
---nginx-env : export env vars to nginx, var must have at least one underscore, ie: *APP_ENV*, *APP_TZ*.
+--nginx-env: export env vars to nginx, var must have at least one underscore, ie. *APP_ENV*, *APP_TZ*.
 ```
 
 Build Arguments (see build file)
