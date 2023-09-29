@@ -1,5 +1,4 @@
-alpine-nginx-php
-================
+# alpine-nginx-php
 
 Nginx running in Alpine with PHP 7.4.x (fpm), developed for PHP apps.
 
@@ -14,16 +13,18 @@ docker run -p 8080:80 -d your/image
 ```
 
 Entry point options
+
 ```yaml
 --nginx-env: export env vars to nginx, var must have at least one underscore, ie. *APP_ENV*, *APP_TZ*.
 ```
 
 Build Arguments (see build file)
+
 ```yaml
 timezone="America/Santiago"
 ```
 
-### Build
+## Build
 
 ```docker
 FROM your/image
