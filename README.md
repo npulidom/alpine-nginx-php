@@ -7,8 +7,7 @@ Nginx running in Alpine with PHP 7.4.x (fpm), developed for PHP apps.
 Run Container [local exposed port **8080**].
 
 ```sh
-# nginx runs as www-data user
-
+# run container, nginx runs as www-data user
 docker run -p 8080:80 -d your/image
 ```
 
